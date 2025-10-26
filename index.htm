@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Martin & Lesly - 6 Year Anniversary</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(to bottom right, #ffe6f0, #fff0f5);
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      header {
+        text-align: center;
+        padding: 80px 20px 40px;
+        background: linear-gradient(135deg, #ffb3d9, #ffe6f0);
+        box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+        position: relative;
+        z-index: 10;
+      }
+
+      header h1 {
+        font-family: 'Great Vibes', cursive;
+        font-size: 4em;
+        color: #b30059;
+        margin-bottom: 10px;
+        animation: fadeInDown 1.2s ease;
+      }
+
+      header p {
+        font-size: 1.2em;
+        color: #800040;
+        animation: fadeIn 2s ease;
+      }
+
+      .enter-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #ff66a3, #ff99cc);
+        color: white;
+        font-size: 1.2em;
+        font-weight: 600;
+        padding: 14px 30px;
+        border: none;
+        border-radius: 30px;
+        margin-top: 30px;
+        cursor: pointer;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+        transition: all 0.3s ease;
+        animation: fadeUp 2s ease;
+      }
+
+      .enter-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 25px rgba(255, 105, 180, 0.6);
+        background: linear-gradient(135deg, #ff4d94, #ff80bf);
+      }
+
+      .message {
+        max-width: 850px;
+        margin: 60px auto;
+        background: #fff;
+        padding: 40px 30px;
+        border-radius: 16px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        animation: fadeUp 1.5s ease;
+      }
+
+      .message h2 {
+        color: #cc0066;
+        font-family: 'Great Vibes', cursive;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+      }
+
+      .message p {
+        font-size: 1.1em;
+        line-height: 1.8;
+        color: #444;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+        max-width: 1100px;
+        margin: 60px auto;
+        padding: 0 20px;
+        animation: fadeUp 1.5s ease;
+      }
+
+      .gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
+        object-fit: cover;
+      }
+
+      .gallery img:hover {
+        transform: scale(1.07) rotate(1deg);
+        box-shadow: 0 10px 25px rgba(255, 102, 153, 0.4);
+      }
+
+      footer {
+        text-align: center;
+        padding: 30px 10px;
+        background: linear-gradient(135deg, #ffcce0, #ffd9ec);
+        color: #800040;
+        font-weight: 500;
+        font-size: 1.1em;
+        letter-spacing: 0.5px;
+        box-shadow: 0 -2px 10px rgba(255, 182, 193, 0.3);
+      }
+
+      /* Floating Hearts */
+      .heart {
+        position: fixed;
+        bottom: -10px;
+        width: 20px;
+        height: 20px;
+        background-color: pink;
+        transform: rotate(45deg);
+        animation: floatHearts 10s linear infinite;
+        opacity: 0.8;
+        z-index: 0;
+      }
+      .heart::before,
+      .heart::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: inherit;
+        border-radius: 50%;
+      }
+      .heart::before {
+        top: -10px;
+        left: 0;
+      }
+      .heart::after {
+        left: -10px;
+        top: 0;
+      }
+
+      @keyframes floatHearts {
+        0% {
+          transform: translateY(0) rotate(45deg) scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-110vh) rotate(45deg) scale(1.5);
+          opacity: 0;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Music Play Button */
+      #playMusicBtn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 12px;
+        background: #ff66a3;
+        color: white;
+        font-size: 1em;
+        cursor: pointer;
+        z-index: 1000;
+        box-shadow: 0 4px 10px rgba(255, 105, 180, 0.4);
+      }
+
+      @media (max-width: 600px) {
+        header h1 {
+          font-size: 2.8em;
+        }
+        .message {
+          margin: 30px 15px;
+          padding: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Music Play Button -->
+    <button id="playMusicBtn">🎵 Tap to Play Music</button>
+
+    <header>
+      <h1>Martin ❤️ Lesly</h1>
+      <p>Together since October 27, 2019 — Celebrating 6 Beautiful Years</p>
+      <a href="story.html" class="enter-btn">💞 Enter Our Love Story</a>
+    </header>
+
+    <div class="message">
+      <h2>To My Love, Lesly</h2>
+      <p>
+        Six years ago, on October 27th, my world changed forever. You came into
+        my life with your smile, your warmth, and your love—and every day since
+        has been more beautiful because of you.<br /><br />
+        We've grown together, laughed together, and faced life hand in hand. I
+        am so proud of us and everything we’ve shared. No matter where life
+        takes us, I will always be yours, and you will always be my heart.<br /><br />
+        Thank you for being my person, my best friend, and the love of my life.
+        Happy Anniversary, my love. Here's to forever together. 💖
+      </p>
+    </div>
+
+    <div class="gallery">
+      <img src="photo1.jpg" alt="Photo 1" />
+      <img src="photo2.jpg" alt="Photo 1" />
+      <img src="photo3.jpg" alt="Photo 1" />
+      <img src="photo4.jpg" alt="Photo 1" />
+      <img src="photo5.jpg" alt="Photo 1" />
+      <img src="photo6.jpg" alt="Photo 1" />
+      
+    </div>
+
+    <audio id="bg-music" loop>
+      <source src="blue.mp3" type="audio/mp3" />
+    </audio>
+
+    <footer>With all my love – Martin 💕</footer>
+
+    <script>
+      // Floating hearts
+      function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.backgroundColor = `hsl(${Math.random() * 360}, 80%, 85%)`;
+        heart.style.animationDuration = Math.random() * 6 + 6 + 's';
+        heart.style.transform = `rotate(45deg) scale(${
+          Math.random() * 1.2 + 0.8
+        })`;
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 10000);
+      }
+      setInterval(createHeart, 300);
+
+      // Play music button for mobile
+      const music = document.getElementById('bg-music');
+      const playBtn = document.getElementById('playMusicBtn');
+
+      playBtn.addEventListener('click', () => {
+        music.play();
+        playBtn.style.display = 'none';
+      });
+
+      // Try autoplay (works on desktop)
+      music.volume = 0.5;
+      music.play().catch(() => {
+        // Autoplay blocked on mobile, show button
+        playBtn.style.display = 'block';
+      });
+    </script>
+  </body>
+</html>
