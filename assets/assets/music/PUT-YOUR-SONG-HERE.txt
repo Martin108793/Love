@@ -1,0 +1,13 @@
+Put your song in this folder and name it exactly:
+
+    our-song.mp3
+
+(or use another name and change "musicPath" in src/data/anniversary-data.ts)
+
+Tips:
+- Use a song you own or that is royalty-free / properly licensed.
+- A calm instrumental (piano or strings) works best, because the apology and
+  final pages are read quietly. The player lowers the volume automatically there.
+- Keep the file under about 8 MB so it loads quickly on phones.
+- If the file is missing, the website still works - the music button just shows
+  that no song is available.
